@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Q8 – Blog Posts</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+<h2>Q8 – Dynamic Blog Posts</h2>
+
+<button id="add">Add New Post</button>
+<button id="featured">Add Featured Post</button>
+<button id="remove">Remove Last</button>
+
+<div id="posts">
+    <p class="post">Learning jQuery is easy!</p>
+</div>
+
+<script>
+$(document).ready(function(){
+
+    $("#add").click(function(){
+        $("#posts").append('<p class="post">New Blog Post Added!</p>');
+    });
+
+    $("#featured").click(function(){
+        $("#posts").prepend('<p class="post">⭐ Featured Post</p>');
+    });
+
+    $("#remove").click(function(){
+        $("#posts .post").last().remove();
+    });
+
+});
+</script>
+
+</body>
+</html>

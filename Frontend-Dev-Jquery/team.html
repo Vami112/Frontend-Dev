@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Q5 – Team Directory</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+<h2>Q5 – Team Members Directory</h2>
+
+<div class="department" id="devDept">
+    <h3>Development</h3>
+    <p class="manager">Manager: Riya</p>
+    <p class="employee">Aayush</p>
+    <p class="employee">Neha</p>
+    <p class="employee">Sumit</p>
+</div>
+
+<script>
+$(document).ready(function(){
+
+    // Click manager → highlight employees
+    $(".manager").click(function(){
+        $(this).nextAll(".employee").toggleClass("highlight");
+    });
+
+    // Hover employee → show contact
+    $(".employee").hover(function(){
+        $(this).append(" (contact: 99999)");
+    }, function(){
+        $(this).text($(this).text().replace("(contact: 99999)",""));
+    });
+
+});
+</script>
+
+</body>
+</html>

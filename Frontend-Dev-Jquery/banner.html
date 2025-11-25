@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Q4 – Banner Effects</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+<h2>Q4 – Special Offer Banner</h2>
+
+<div class="banner">🔥 New Year Sale – 50% OFF</div>
+<div class="banner">🎉 Buy 1 Get 1 Free!</div>
+<div class="banner">⚡ Flash Deal Today!</div>
+
+<button id="hideBtn">Hide</button>
+<button id="showBtn">Show</button>
+<button id="slideBtn">Slide Toggle</button>
+<button id="fadeBtn">Fade Toggle</button>
+
+<script>
+$(document).ready(function(){
+
+    $("#hideBtn").click(()=> $(".banner").hide());
+    $("#showBtn").click(()=> $(".banner").show());
+    $("#slideBtn").click(()=> $(".banner").slideToggle());
+    $("#fadeBtn").click(()=> $(".banner").fadeToggle());
+
+});
+</script>
+
+</body>
+</html>

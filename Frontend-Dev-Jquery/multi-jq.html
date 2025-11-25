@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Q9 – Multi jQuery Versions</title>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script>
+        var jq1 = $.noConflict(true);
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        var jq2 = $.noConflict(true);
+    </script>
+
+</head>
+<body>
+
+<h2>Q9 – Multi jQuery Widgets</h2>
+
+<div id="carousel">Carousel Widget</div>
+<div id="modal">Modal Popup</div>
+
+<script>
+// Version 1 – Carousel
+jq1("#carousel").css("color","blue");
+
+// Version 2 – Modal
+jq2("#modal").css("color","red");
+</script>
+
+</body>
+</html>

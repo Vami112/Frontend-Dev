@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Q3 – FAQ Interaction</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+<h2>Q3 – Interactive FAQ</h2>
+
+<div class="faq">
+    <h3 class="ques">What is jQuery?</h3>
+    <p class="ans">jQuery is a JavaScript library.</p>
+
+    <h3 class="ques">What is AJAX?</h3>
+    <p class="ans">A method to load data without refreshing.</p>
+
+    <h3 class="ques">What is DOM?</h3>
+    <p class="ans">Document Object Model.</p>
+</div>
+
+<script>
+$(document).ready(function(){
+
+    // Toggle answer
+    $(".ques").click(function(){
+        $(this).next().toggle();
+    });
+
+    // Hover color
+    $(".ques").hover(
+        function(){ $(this).css("color","blue"); },
+        function(){ $(this).css("color","black"); }
+    );
+
+    // Double click collapse all
+    $(".ques").dblclick(function(){
+        $(".ans").hide();
+    });
+
+});
+</script>
+
+</body>
+</html>

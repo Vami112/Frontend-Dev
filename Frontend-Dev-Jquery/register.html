@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Q10 – Registration Form</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+<h2>Q10 – Registration Form</h2>
+
+Name: <input type="text" id="name"><br><br>
+Email: <input type="text" id="email"><br><br>
+Password: <input type="password" id="pass"><br><br>
+
+<button id="submit">Register</button>
+
+<p id="result"></p>
+
+<script>
+$(document).ready(function(){
+
+    $("#submit").click(function(){
+
+        let name = $("#name").val();
+        let email = $("#email").val();
+        let pass = $("#pass").val();
+
+        let valid = true;
+
+        if(name === ""){
+            $("#name").css("border","2px solid red");
+            valid = false;
+        }
+
+        if(!email.includes("@")){
+            $("#email").css("border","2px solid red");
+            valid = false;
+        }
+
+        if(pass.length < 8){
+            $("#pass").css("border","2px solid red");
+            valid = false;
+        }
+
+        if(valid){
+            $("#result").text("Registration Successful!").css("color","green");
+        }
+
+    });
+
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Q6 – Subscription Panel</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+<h2>Q6 – Event Subscription Panel</h2>
+
+<button id="sub">Subscribe</button>
+<button id="unsub">Unsubscribe</button>
+
+<div id="msg"></div>
+
+<script>
+$(document).ready(function(){
+
+    $("#sub").click(function(){
+        $("#msg").text("Notifications Enabled!").css("color","green");
+    });
+
+    $("#unsub").click(function(){
+        $("#msg").text("Notifications Disabled!").css("color","red");
+    });
+
+});
+</script>
+
+</body>
+</html>
