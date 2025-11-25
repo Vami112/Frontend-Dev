@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Mini User Interface</title>
+    <link rel="stylesheet" href="question10.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-content">
+            <h1>My Application</h1>
+            <nav>
+                <a href="#" class="nav-link">Home</a>
+                <a href="#" class="nav-link">About</a>
+                <a href="#" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="main-card">
+            <h2>Welcome to Our Platform</h2>
+            <p class="subtitle">Sign up to get started</p>
+
+            <div class="card-content">
+                <!-- Image Section -->
+                <div class="image-section">
+                    <div class="feature-image">🎨</div>
+                    <p class="image-caption">Beautiful Design</p>
+                </div>
+
+                <!-- Form Section -->
+                <form class="user-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms">I agree to the terms and conditions</label>
+                    </div>
+
+                    <div class="button-group">
+                        <button type="submit" class="btn btn-primary-form">Sign Up</button>
+                        <button type="button" class="btn btn-secondary-form">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2024 My Application. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Support</a>
+        </div>
+    </footer>
+</body>
+</html>
+

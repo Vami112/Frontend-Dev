@@ -1,0 +1,158 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Header styles */
+header {
+    text-align: center;
+    margin-bottom: 60px;
+    color: white;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+header p {
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+/* Main container */
+main {
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Tooltip container using Flexbox for centering */
+.tooltip-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 40px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+/* Tooltip wrapper - relative positioning for absolute tooltip */
+.tooltip-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+/* Tooltip trigger elements */
+.tooltip-trigger {
+    position: relative;
+    padding: 15px 25px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
+}
+
+.tooltip-trigger:hover {
+    transform: translateY(-3px);
+}
+
+/* Image placeholder style */
+.image-placeholder {
+    font-size: 3em;
+    padding: 20px;
+    background: #f0f0f0;
+    border-radius: 10px;
+}
+
+/* Custom box style */
+.custom-box {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    padding: 20px 30px;
+}
+
+/* Tooltip - positioned absolutely, hidden by default */
+.tooltip-trigger::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px);
+    background: #333;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 6px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    font-size: 0.9em;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Tooltip arrow */
+.tooltip-trigger::after {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-4px);
+    border: 6px solid transparent;
+    border-top-color: #333;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+/* Tooltip visible on hover */
+.tooltip-trigger:hover::before,
+.tooltip-trigger:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Footer styles */
+footer {
+    margin-top: 40px;
+    text-align: center;
+    color: white;
+    font-size: 0.95em;
+    opacity: 0.9;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .tooltip-container {
+        gap: 30px;
+        padding: 30px 20px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+}
+

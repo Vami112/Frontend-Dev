@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box-Sizing Comparison</title>
+    <link rel="stylesheet" href="question8.css">
+</head>
+<body>
+    <header>
+        <h1>Box-Sizing Comparison</h1>
+        <p>Understanding the difference between default and border-box sizing</p>
+    </header>
+
+    <main>
+        <section class="comparison-container">
+            <!-- Default Box-Sizing -->
+            <div class="box-comparison">
+                <h2>Default Box-Sizing (content-box)</h2>
+                <p class="description">
+                    With default box-sizing, width and padding are added together. 
+                    The total width = width + padding + border.
+                </p>
+                <div class="box-wrapper">
+                    <div class="box-default">
+                        <p>Width: 300px</p>
+                        <p>Padding: 30px</p>
+                        <p>Border: 5px</p>
+                        <p class="total">Total Width: 370px</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Border-Box -->
+            <div class="box-comparison">
+                <h2>Border-Box</h2>
+                <p class="description">
+                    With box-sizing: border-box, padding and border are included in the width. 
+                    The total width = specified width.
+                </p>
+                <div class="box-wrapper">
+                    <div class="box-border">
+                        <p>Width: 300px</p>
+                        <p>Padding: 30px</p>
+                        <p>Border: 5px</p>
+                        <p class="total">Total Width: 300px</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="explanation">
+            <h2>Key Differences</h2>
+            <div class="explanation-grid">
+                <div class="explanation-item">
+                    <h3>Content-Box (Default)</h3>
+                    <ul>
+                        <li>Width/Height = content only</li>
+                        <li>Padding adds to total size</li>
+                        <li>Border adds to total size</li>
+                        <li>More predictable sizing</li>
+                    </ul>
+                </div>
+                <div class="explanation-item">
+                    <h3>Border-Box</h3>
+                    <ul>
+                        <li>Width/Height = content + padding + border</li>
+                        <li>Padding included in width</li>
+                        <li>Border included in width</li>
+                        <li>Easier responsive design</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Both boxes have the same CSS width, padding, and border values</p>
+    </footer>
+</body>
+</html>
+

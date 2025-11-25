@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo-Classes Demonstration</title>
+    <link rel="stylesheet" href="question1.css">
+</head>
+<body>
+    <div class="container">
+        <h1>CSS Pseudo-Classes Demonstration</h1>
+        
+        <div class="examples-container">
+            <!-- :hover Example -->
+            <div class="example-card">
+                <div class="example-title">:hover</div>
+                <div class="example-description">
+                    Changes style when the mouse cursor hovers over an element. Commonly used for links and interactive elements.
+                </div>
+                <div class="demo-section">
+                    <a href="#" class="hover-link">Hover over me!</a>
+                </div>
+                <div class="instruction-text">Move your mouse over the link</div>
+            </div>
+
+            <!-- :focus Example -->
+            <div class="example-card">
+                <div class="example-title">:focus</div>
+                <div class="example-description">
+                    Applies styles when an element receives focus, typically through keyboard navigation or mouse clicks (for form inputs).
+                </div>
+                <div class="demo-section">
+                    <input type="text" class="focus-input" placeholder="Click or tab to focus" value="">
+                </div>
+                <div class="instruction-text">Click inside the input or press Tab</div>
+            </div>
+
+            <!-- :active Example -->
+            <div class="example-card">
+                <div class="example-title">:active</div>
+                <div class="example-description">
+                    Styles an element when it is being activated by the user (e.g., when a button is being clicked).
+                </div>
+                <div class="demo-section">
+                    <button class="active-button">Click and hold me!</button>
+                </div>
+                <div class="instruction-text">Click and hold the button</div>
+            </div>
+
+            <!-- :nth-child() Example -->
+            <div class="example-card">
+                <div class="example-title">:nth-child()</div>
+                <div class="example-description">
+                    Selects elements based on their position among siblings. Useful for styling alternating rows, specific positions, or patterns.
+                </div>
+                <div class="demo-section">
+                    <ul class="nth-child-list">
+                        <li>Item 1 (odd)</li>
+                        <li>Item 2 (even)</li>
+                        <li>Item 3 (3n)</li>
+                        <li>Item 4 (odd)</li>
+                        <li>Item 5 (even)</li>
+                        <li>Item 6 (3n)</li>
+                    </ul>
+                </div>
+                <div class="instruction-text">Odd=Yellow, Even=Blue, 3n=Pink</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

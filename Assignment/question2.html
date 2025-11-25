@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tooltip Demonstration</title>
+    <link rel="stylesheet" href="question2.css">
+</head>
+<body>
+    <header>
+        <h1>CSS Tooltip Demonstration</h1>
+        <p>Hover over the elements below to see tooltips in action</p>
+    </header>
+
+    <main>
+        <section class="tooltip-container">
+            <!-- Icon with tooltip -->
+            <div class="tooltip-wrapper">
+                <span class="tooltip-trigger" data-tooltip="This is a helpful tooltip!">ℹ️</span>
+            </div>
+
+            <!-- Word with tooltip -->
+            <div class="tooltip-wrapper">
+                <span class="tooltip-trigger" data-tooltip="Click here to learn more">Information</span>
+            </div>
+
+            <!-- Button with tooltip -->
+            <div class="tooltip-wrapper">
+                <button class="tooltip-trigger" data-tooltip="This button performs an action">Action Button</button>
+            </div>
+
+            <!-- Link with tooltip -->
+            <div class="tooltip-wrapper">
+                <a href="#" class="tooltip-trigger" data-tooltip="Visit our website">Learn More</a>
+            </div>
+
+            <!-- Image placeholder with tooltip -->
+            <div class="tooltip-wrapper">
+                <div class="tooltip-trigger image-placeholder" data-tooltip="This is an image placeholder">📷</div>
+            </div>
+
+            <!-- Custom element with tooltip -->
+            <div class="tooltip-wrapper">
+                <div class="tooltip-trigger custom-box" data-tooltip="Custom styled element with tooltip">Hover Me</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Tooltips created using CSS only - no JavaScript required!</p>
+    </footer>
+</body>
+</html>
+

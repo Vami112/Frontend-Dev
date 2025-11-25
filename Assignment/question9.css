@@ -1,0 +1,225 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header styles */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    color: white;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+header p {
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+/* Main container */
+main {
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Effects container using Flexbox */
+.effects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+/* Effect card */
+.effect-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    min-width: 250px;
+    flex: 1;
+    max-width: 300px;
+    padding: 25px;
+    background: #f8f9fa;
+    border-radius: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.effect-card:hover {
+    transform: translateY(-5px);
+}
+
+.effect-card h3 {
+    color: #333;
+    font-size: 1.3em;
+    text-align: center;
+}
+
+.effect-card p {
+    color: #666;
+    font-size: 0.9em;
+    text-align: center;
+    font-style: italic;
+}
+
+/* Effect box base styles */
+.effect-box {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Effect button base styles */
+.effect-btn {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* 1. Growing Button - combines scale, color change, and shadow */
+.grow-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    transition: transform 0.3s ease-in-out, 
+                background 0.3s ease-in-out, 
+                box-shadow 0.3s ease-in-out;
+}
+
+.grow-btn:hover {
+    transform: scale(1.1);
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    box-shadow: 0 8px 24px rgba(245, 87, 108, 0.4);
+}
+
+.grow-btn:active {
+    transform: scale(0.95);
+}
+
+/* 2. Rotating Box - combines rotation, elevation, and shadow */
+.rotate-box {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    transition: transform 0.3s ease-in-out, 
+                box-shadow 0.3s ease-in-out;
+}
+
+.rotate-box:hover {
+    transform: rotate(5deg) translateY(-10px);
+    box-shadow: 0 12px 30px rgba(79, 172, 254, 0.5);
+}
+
+.inner-content {
+    pointer-events: none;
+}
+
+/* 3. Color Box - combines color change, scale, and border */
+.color-box {
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    border: 3px solid transparent;
+    transition: transform 0.3s ease-in-out, 
+                background 0.3s ease-in-out,
+                border-color 0.3s ease-in-out;
+}
+
+.color-box:hover {
+    transform: scale(1.15);
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    border-color: #fff;
+}
+
+/* 4. Slide Box - combines translate, scale, and shadow */
+.slide-box {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    transition: transform 0.3s ease-in-out, 
+                box-shadow 0.3s ease-in-out;
+}
+
+.slide-box:hover {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(250, 112, 154, 0.5);
+}
+
+/* 5. Shadow Box - combines scale and enhanced shadow */
+.shadow-box {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    color: #333;
+    transition: transform 0.3s ease-in-out, 
+                box-shadow 0.3s ease-in-out;
+}
+
+.shadow-box:hover {
+    transform: scale(1.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3),
+                0 0 0 8px rgba(102, 126, 234, 0.1);
+}
+
+/* 6. Transform Box - combines multiple transforms */
+.transform-box {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    transition: transform 0.3s ease-in-out, 
+                box-shadow 0.3s ease-in-out;
+}
+
+.transform-box:hover {
+    transform: rotate(10deg) scale(1.1) translateY(-10px);
+    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.5);
+}
+
+/* Footer styles */
+footer {
+    margin-top: 40px;
+    text-align: center;
+    color: white;
+    font-size: 0.95em;
+    opacity: 0.9;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .effects-container {
+        gap: 30px;
+        padding: 30px 20px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    .effect-card {
+        min-width: 100%;
+        max-width: 100%;
+    }
+}
+

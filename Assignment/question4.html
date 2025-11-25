@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors Practice</title>
+    <link rel="stylesheet" href="question4.css">
+</head>
+<body>
+    <header>
+        <h1>CSS Selectors Demonstration</h1>
+        <p>Understanding different CSS selector types</p>
+    </header>
+
+    <main>
+        <!-- Element Selector Example -->
+        <section class="selector-section">
+            <h2>1. Element Selector</h2>
+            <p>Selects all elements of a specific type (e.g., p, div, h1)</p>
+            <div class="demo-box">
+                <p>This paragraph is styled with element selector</p>
+                <p>All paragraphs share the same styling</p>
+            </div>
+        </section>
+
+        <!-- Class Selector Example -->
+        <section class="selector-section">
+            <h2>2. Class Selector</h2>
+            <p>Selects elements with a specific class attribute (e.g., .my-class)</p>
+            <div class="demo-box">
+                <p class="highlight">This paragraph has class="highlight"</p>
+                <p>This paragraph doesn't have the class</p>
+                <p class="highlight">This paragraph also has class="highlight"</p>
+            </div>
+        </section>
+
+        <!-- ID Selector Example -->
+        <section class="selector-section">
+            <h2>3. ID Selector</h2>
+            <p>Selects an element with a specific ID attribute (e.g., #my-id)</p>
+            <div class="demo-box">
+                <p id="unique-element">This paragraph has id="unique-element"</p>
+                <p>This paragraph has no ID</p>
+            </div>
+        </section>
+
+        <!-- Attribute Selector Example -->
+        <section class="selector-section">
+            <h2>4. Attribute Selector</h2>
+            <p>Selects elements based on attributes (e.g., [type="text"], [href^="https"])</p>
+            <div class="demo-box">
+                <a href="https://example.com">External link (https)</a>
+                <a href="http://example.com">HTTP link</a>
+                <a href="#section">Anchor link</a>
+                <input type="text" placeholder="Text input">
+                <input type="email" placeholder="Email input">
+            </div>
+        </section>
+
+        <!-- Descendant Selector Example -->
+        <section class="selector-section">
+            <h2>5. Descendant Selector</h2>
+            <p>Selects elements that are descendants (e.g., div p selects all p inside div)</p>
+            <div class="demo-box">
+                <p>Direct child paragraph</p>
+                <div class="nested">
+                    <p>Nested paragraph inside div</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Child Selector (>) Example -->
+        <section class="selector-section">
+            <h2>6. Child Selector (>)</h2>
+            <p>Selects direct children only (e.g., div > p selects only direct p children)</p>
+            <div class="demo-box parent">
+                <p>Direct child paragraph</p>
+                <div>
+                    <p>Not a direct child (nested deeper)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Adjacent Sibling Selector (+) Example -->
+        <section class="selector-section">
+            <h2>7. Adjacent Sibling Selector (+)</h2>
+            <p>Selects the immediately following sibling (e.g., h2 + p)</p>
+            <div class="demo-box">
+                <h3>Heading</h3>
+                <p>This paragraph is immediately after the heading</p>
+                <p>This paragraph is not immediately after the heading</p>
+            </div>
+        </section>
+
+        <!-- General Sibling Selector (~) Example -->
+        <section class="selector-section">
+            <h2>8. General Sibling Selector (~)</h2>
+            <p>Selects all following siblings (e.g., h2 ~ p selects all p after h2)</p>
+            <div class="demo-box">
+                <h3>Heading</h3>
+                <p>This paragraph follows the heading</p>
+                <span>Some text</span>
+                <p>This paragraph also follows the heading</p>
+            </div>
+        </section>
+
+        <!-- Combined Selectors Example -->
+        <section class="selector-section">
+            <h2>9. Combined Selectors</h2>
+            <p>Multiple selectors can be combined for more specific targeting</p>
+            <div class="demo-box">
+                <ul class="list">
+                    <li>First item</li>
+                    <li>Second item</li>
+                    <li>Third item</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>CSS Selectors Practice - Understanding how different selectors work</p>
+    </footer>
+</body>
+</html>
+

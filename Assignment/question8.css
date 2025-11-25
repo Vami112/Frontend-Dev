@@ -1,0 +1,242 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header styles */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    color: white;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+header p {
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+/* Main container */
+main {
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Comparison container using Flexbox */
+.comparison-container {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Box comparison */
+.box-comparison {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.box-comparison h2 {
+    color: #333;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.box-comparison .description {
+    color: #666;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    text-align: center;
+    font-size: 0.95em;
+}
+
+/* Box wrapper for visual comparison */
+.box-wrapper {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 10px;
+    border: 2px dashed #dee2e6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 250px;
+}
+
+/* Default box-sizing (content-box) */
+.box-default {
+    width: 300px;
+    padding: 30px;
+    border: 5px solid #667eea;
+    background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+    border-radius: 10px;
+    box-sizing: content-box; /* Explicit default */
+    text-align: center;
+    color: #333;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.box-default p {
+    margin: 8px 0;
+    font-weight: 500;
+}
+
+.box-default .total {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #d63031;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Border-box */
+.box-border {
+    width: 300px;
+    padding: 30px;
+    border: 5px solid #28a745;
+    background: linear-gradient(135deg, #d5f4e6 0%, #a8e6cf 100%);
+    border-radius: 10px;
+    box-sizing: border-box; /* Includes padding and border in width */
+    text-align: center;
+    color: #333;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.box-border p {
+    margin: 8px 0;
+    font-weight: 500;
+}
+
+.box-border .total {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #28a745;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Explanation section */
+.explanation {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.explanation h2 {
+    color: #333;
+    font-size: 1.8em;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Explanation grid using Flexbox */
+.explanation-grid {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.explanation-item {
+    flex: 1;
+    min-width: 250px;
+    max-width: 400px;
+    padding: 25px;
+    background: #f8f9fa;
+    border-radius: 15px;
+    border-left: 4px solid #667eea;
+}
+
+.explanation-item h3 {
+    color: #667eea;
+    font-size: 1.3em;
+    margin-bottom: 15px;
+}
+
+.explanation-item ul {
+    list-style: none;
+    padding: 0;
+}
+
+.explanation-item li {
+    padding: 8px 0;
+    color: #666;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.explanation-item li:last-child {
+    border-bottom: none;
+}
+
+.explanation-item li::before {
+    content: "✓ ";
+    color: #28a745;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+/* Footer styles */
+footer {
+    margin-top: 40px;
+    text-align: center;
+    color: white;
+    font-size: 0.95em;
+    opacity: 0.9;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .comparison-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .box-comparison {
+        max-width: 100%;
+    }
+
+    .explanation-grid {
+        flex-direction: column;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    .box-wrapper {
+        padding: 20px;
+    }
+
+    .box-default,
+    .box-border {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+

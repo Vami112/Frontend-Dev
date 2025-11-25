@@ -1,0 +1,216 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+/* Header styles */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    color: white;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+header p {
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+/* Main container */
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Selector section */
+.selector-section {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.selector-section h2 {
+    color: #667eea;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.selector-section > p {
+    color: #666;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+/* Demo box */
+.demo-box {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid #667eea;
+}
+
+/* 1. Element Selector - selects all p elements */
+.demo-box p {
+    padding: 10px;
+    margin: 5px 0;
+    background: #e3f2fd;
+    border-radius: 5px;
+    color: #1976d2;
+}
+
+/* 2. Class Selector - selects elements with class="highlight" */
+.highlight {
+    background: #fff3cd !important;
+    color: #856404 !important;
+    font-weight: bold;
+    border: 2px solid #ffc107;
+}
+
+/* 3. ID Selector - selects element with id="unique-element" */
+#unique-element {
+    background: #f8d7da !important;
+    color: #721c24 !important;
+    font-weight: bold;
+    border: 2px solid #dc3545;
+}
+
+/* 4. Attribute Selector - selects links starting with https */
+a[href^="https"] {
+    display: block;
+    padding: 10px;
+    margin: 5px 0;
+    background: #d4edda;
+    color: #155724;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+a[href^="http"]:not([href^="https"]) {
+    display: block;
+    padding: 10px;
+    margin: 5px 0;
+    background: #fff3cd;
+    color: #856404;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+a[href^="#"] {
+    display: block;
+    padding: 10px;
+    margin: 5px 0;
+    background: #d1ecf1;
+    color: #0c5460;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+input[type="text"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 2px solid #667eea;
+    border-radius: 5px;
+}
+
+input[type="email"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 2px solid #28a745;
+    border-radius: 5px;
+}
+
+/* 5. Descendant Selector - selects all p inside .demo-box */
+.demo-box p {
+    transition: all 0.3s ease;
+}
+
+/* 6. Child Selector (>) - selects only direct children */
+.parent > p {
+    background: #e7f3ff !important;
+    color: #004085 !important;
+    border-left: 4px solid #004085;
+}
+
+/* 7. Adjacent Sibling Selector (+) - selects p immediately after h3 */
+h3 + p {
+    background: #f3e5f5 !important;
+    color: #4a148c !important;
+    font-weight: bold;
+    border-left: 4px solid #9c27b0;
+}
+
+/* 8. General Sibling Selector (~) - selects all p after h3 */
+h3 ~ p {
+    background: #fff9e6 !important;
+    color: #f57f17 !important;
+}
+
+/* 9. Combined Selectors - ul.list li selects li inside ul with class list */
+.list {
+    list-style: none;
+    padding: 0;
+}
+
+.list li {
+    padding: 10px;
+    margin: 5px 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.list li:hover {
+    transform: translateX(10px);
+}
+
+.list li:nth-child(odd) {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+/* Footer styles */
+footer {
+    margin-top: 40px;
+    text-align: center;
+    color: white;
+    font-size: 0.95em;
+    opacity: 0.9;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    .selector-section {
+        padding: 20px;
+    }
+
+    main {
+        gap: 20px;
+    }
+}
+
