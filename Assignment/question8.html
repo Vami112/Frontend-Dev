@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model Exploration</title>
+    <link rel="stylesheet" href="question8.css">
+</head>
+<body>
+    <header>
+        <h1>Box Model Exploration</h1>
+    </header>
+    
+    <main>
+        <section class="container">
+            <div class="demo-section">
+                <h2>Default Box Model (content-box)</h2>
+                <div class="box-default">
+                    <div class="content-area">
+                        <p>Content Area</p>
+                    </div>
+                    <p class="description">Padding: 30px | Border: 5px | Total width includes padding and border</p>
+                </div>
+            </div>
+            
+            <div class="demo-section">
+                <h2>Border-Box Model</h2>
+                <div class="box-border-box">
+                    <div class="content-area">
+                        <p>Content Area</p>
+                    </div>
+                    <p class="description">Padding: 30px | Border: 5px | Width includes padding and border</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="layers-section">
+            <h2>Box Model Layers</h2>
+            <div class="layers-box">
+                <div class="margin-layer">
+                    Margin
+                    <div class="border-layer">
+                        Border
+                        <div class="padding-layer">
+                            Padding
+                            <div class="content-layer">
+                                Content
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>Box Model Examples</p>
+    </footer>
+</body>
+</html>
+

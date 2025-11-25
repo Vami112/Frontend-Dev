@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced CSS Selectors</title>
+    <link rel="stylesheet" href="question5.css">
+</head>
+<body>
+    <header>
+        <h1>Advanced CSS Selectors Demonstration</h1>
+    </header>
+    
+    <main>
+        <section>
+            <h2>Attribute Selectors</h2>
+            <input type="text" placeholder="Text input with [type='text']">
+            <input type="email" placeholder="Email input">
+            <a href="https://example.com">HTTPS Link (starts with https)</a>
+            <a href="http://example.com">HTTP Link</a>
+        </section>
+        
+        <section>
+            <h2>Pseudo-classes and Pseudo-elements</h2>
+            <ul class="list">
+                <li>First item (nth-child(1))</li>
+                <li>Second item (nth-child(2))</li>
+                <li>Third item (nth-child(3))</li>
+                <li>Fourth item (nth-child(4))</li>
+                <li>Fifth item (nth-child(5))</li>
+            </ul>
+            
+            <div class="before-after">
+                <p>This paragraph has ::before and ::after pseudo-elements</p>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Combinators</h2>
+            <div class="parent">
+                <p>Direct child (>) - This is a direct child of .parent</p>
+                <div>
+                    <p>Descendant - This is a descendant of .parent</p>
+                </div>
+            </div>
+            
+            <div class="adjacent">
+                <p>First paragraph</p>
+                <p>Adjacent sibling (+) - This is styled using + combinator</p>
+                <p>General sibling (~) - This is styled using ~ combinator</p>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>Advanced CSS Selectors Examples</p>
+    </footer>
+</body>
+</html>
+

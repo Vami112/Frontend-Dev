@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Height and Width Practice Layout</title>
+    <link rel="stylesheet" href="question2.css">
+</head>
+<body>
+    <header>
+        <h1>Height and Width Practice Layout</h1>
+    </header>
+    
+    <main>
+        <section class="container">
+            <!-- Box 1: Using px units -->
+            <div class="box box-px">
+                <h3>Pixel Units (px)</h3>
+                <p>Width: 200px</p>
+                <p>Height: 150px</p>
+                <p>This box uses fixed pixel dimensions.</p>
+            </div>
+            
+            <!-- Box 2: Using percentage -->
+            <div class="box box-percent">
+                <h3>Percentage (%)</h3>
+                <p>Width: 30%</p>
+                <p>Min-height: 180px</p>
+                <p>Max-width: 300px</p>
+                <p>This box uses percentage and min/max constraints.</p>
+            </div>
+            
+            <!-- Box 3: Using vh and em -->
+            <div class="box box-vh-em">
+                <h3>Viewport & Em Units</h3>
+                <p>Width: 15em</p>
+                <p>Height: 20vh</p>
+                <p>Overflow: hidden</p>
+                <p>This box demonstrates viewport height and em units with overflow property. Extra content here that will be hidden due to overflow setting.</p>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>Height and Width Examples</p>
+    </footer>
+</body>
+</html>
+

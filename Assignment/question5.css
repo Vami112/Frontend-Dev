@@ -1,0 +1,150 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+section {
+    background-color: white;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Attribute selector: [type="text"] - selects input with type text */
+input[type="text"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #3498db;
+    border-radius: 5px;
+}
+
+/* Attribute selector: [href^="https"] - selects links starting with https */
+a[href^="https"] {
+    display: block;
+    color: #2ecc71;
+    text-decoration: none;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #ecf0f1;
+    border-radius: 5px;
+}
+
+a[href^="https"]:hover {
+    background-color: #d5dbdb;
+}
+
+/* Pseudo-class: :hover - styles on hover */
+a:hover {
+    text-decoration: underline;
+}
+
+/* Pseudo-class: :focus - styles on focus */
+input:focus {
+    outline: 3px solid #3498db;
+    outline-offset: 2px;
+}
+
+/* Pseudo-class: :nth-child() - selects specific child elements */
+.list li:nth-child(1) {
+    background-color: #3498db;
+    color: white;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+.list li:nth-child(2) {
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+.list li:nth-child(3) {
+    background-color: #2ecc71;
+    color: white;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+.list li:nth-child(even) {
+    border-left: 5px solid #f39c12;
+}
+
+/* Pseudo-element: ::before - adds content before element */
+.before-after p::before {
+    content: "★ ";
+    color: #f39c12;
+    font-size: 20px;
+}
+
+/* Pseudo-element: ::after - adds content after element */
+.before-after p::after {
+    content: " ★";
+    color: #f39c12;
+    font-size: 20px;
+}
+
+/* Combinator: > (child selector) - selects direct children only */
+.parent > p {
+    background-color: #3498db;
+    color: white;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+/* Descendant selector (space) - selects all descendants */
+.parent p {
+    border-radius: 5px;
+}
+
+/* Combinator: + (adjacent sibling) - selects immediately following sibling */
+.adjacent p:first-child + p {
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+/* Combinator: ~ (general sibling) - selects all following siblings */
+.adjacent p:first-child ~ p {
+    border-left: 4px solid #9b59b6;
+    padding-left: 15px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    margin-top: 30px;
+}
+
