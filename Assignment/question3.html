@@ -1,0 +1,94 @@
+3) 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Registration Form</title>
+</head>
+<body>
+
+    <h1>Course Enrollment</h1>
+
+    <form action="/submit-registration" method="post">
+        
+        <fieldset>
+            <legend>Your Details</legend>
+            
+            <p>
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" required>
+            </p>
+            
+            <p>
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+            </p>
+            
+        </fieldset>
+
+        <br>
+        
+        <fieldset>
+            <legend>Course Selection</legend>
+            
+            <p>
+                <label for="courseSelect">Select Course:</label>
+                <select id="courseSelect" name="course_id" required>
+                    <option value="">-- Choose a Course --</option>
+                    <option value="CS101">Introduction to Web Development (CS101)</option>
+                    <option value="DS202">Data Science Fundamentals (DS202)</option>
+                    <option value="GD303">Graphic Design Principles (GD303)</option>
+                    <option value="BA105">Business Analytics (BA105)</option>
+                </select>
+            </p>
+            
+            <p>
+                <label for="startDate">Preferred Start Date:</label>
+                <input type="date" id="startDate" name="startDate">
+            </p>
+            
+        </fieldset>
+        
+        <br>
+        
+        <button type="submit">Register Now</button>
+
+    </form>
+
+    <hr>
+
+    <h2>Available Course Schedules</h2>
+    <table border="1" cellpadding="10" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Course Name</th>
+                <th>Day</th>
+                <th>Time</th>
+                <th>Instructor</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Intro to Web Dev</td>
+                <td>Monday, Wednesday</td>
+                <td>10:00 AM - 11:30 AM</td>
+                <td>Dr. Alice Smith</td>
+            </tr>
+            <tr>
+                <td>Data Science Fnd.</td>
+                <td>Tuesday, Thursday</td>
+                <td>2:00 PM - 3:30 PM</td>
+                <td>Prof. Bob Johnson</td>
+            </tr>
+            <tr>
+                <td>Graphic Design Pr.</td>
+                <td>Friday</td>
+                <td>9:00 AM - 12:00 PM</td>
+                <td>Ms. Carol White</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
