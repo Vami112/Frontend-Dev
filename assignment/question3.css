@@ -1,0 +1,219 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Styles */
+.header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 1.5rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navigation {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: #3498db;
+    transform: translateY(-2px);
+}
+
+/* Main Section Styles */
+.main {
+    flex: 1;
+    padding: 3rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    gap: 2rem;
+    align-items: stretch;
+}
+
+.content-box {
+    flex: 1;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 4px solid;
+}
+
+.content-box:hover {
+    transform: rotate(2deg);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.services-box {
+    border-top-color: #e74c3c;
+}
+
+.projects-box {
+    border-top-color: #27ae60;
+}
+
+.contact-box {
+    border-top-color: #f39c12;
+}
+
+.content-box h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+.content-box p {
+    margin-bottom: 1.5rem;
+    color: #666;
+    text-align: justify;
+}
+
+.content-box ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.content-box li {
+    padding: 0.5rem 0;
+    color: #555;
+    border-bottom: 1px solid #eee;
+    transition: color 0.3s ease;
+}
+
+.content-box li:last-child {
+    border-bottom: none;
+}
+
+.content-box li:hover {
+    color: #3498db;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #34495e;
+    color: white;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: auto;
+    width: 100%;
+}
+
+.footer p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navigation {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+    
+    .nav-link {
+        font-size: 1rem;
+        padding: 0.4rem 0.8rem;
+    }
+    
+    .main-container {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+    
+    .content-box {
+        padding: 1.5rem;
+    }
+    
+    .content-box h2 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    
+    .content-box:hover {
+        transform: rotate(1deg);
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 1rem 0;
+    }
+    
+    .main {
+        padding: 2rem 0;
+    }
+    
+    .content-box {
+        padding: 1rem;
+    }
+    
+    .content-box h2 {
+        font-size: 1.3rem;
+    }
+    
+    .nav-link {
+        font-size: 0.9rem;
+        padding: 0.3rem 0.6rem;
+    }
+}
+
+/* Additional responsive adjustments for very small screens */
+@media (max-width: 320px) {
+    .main-container {
+        padding: 0 0.5rem;
+    }
+    
+    .content-box {
+        padding: 0.8rem;
+    }
+    
+    .content-box h2 {
+        font-size: 1.2rem;
+    }
+    
+    .content-box p {
+        font-size: 0.9rem;
+    }
+    
+    .content-box li {
+        font-size: 0.9rem;
+    }
+}

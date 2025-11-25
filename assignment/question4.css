@@ -1,0 +1,147 @@
+/* --- Basic Reset & Setup --- */
+* {
+    box-sizing: border-box; /* Makes box model predictable */
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    height: 100%;
+    background-color: #f0f2f5; /* Light grey background for the page */
+}
+
+/* --- Page Layout Grid (Dashboard Container) --- */
+.dashboard-container {
+    display: grid;
+    height: 100vh; /* Full viewport height */
+    
+    /* Columns: 250px fixed width for sidebar, 1fr (fractional unit) for the rest.
+    */
+    grid-template-columns: 250px 1fr;
+    
+    /* Rows: 60px fixed height for header, 1fr for the rest.
+    */
+    grid-template-rows: 60px 1fr;
+    
+    /* Defines the layout areas.
+      "header header" means the 'header' area spans both columns.
+      "sidebar main" means 'sidebar' is in col 1, 'main' is in col 2.
+    */
+    grid-template-areas:
+        "header header"
+        "sidebar main";
+    
+    /* Spacing between grid items */
+    gap: 15px; 
+    
+    padding: 15px; /* Padding around the whole dashboard */
+}
+
+/* --- Grid Area Assignments --- */
+.header {
+    grid-area: header;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    padding: 0 25px;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    padding: 20px;
+    overflow-y: auto; /* In case nav is long */
+}
+
+.main-content {
+    grid-area: main;
+    overflow-y: auto; /* Allow content to scroll if it overflows */
+    
+    /* --- Main Content Grid (for the boxes) --- */
+    display: grid;
+    /* 2 equal-width columns */
+    grid-template-columns: repeat(2, 1fr); 
+    /* Set a minimum height for rows, but let them grow */
+    grid-auto-rows: minmax(150px, auto); 
+    /* Use grid-gap (or gap) for spacing */
+    gap: 20px;
+}
+
+/* --- Header & Sidebar Content Styling --- */
+.header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.sidebar h2 {
+    font-size: 1.1rem;
+    color: #555;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0 0;
+}
+
+.sidebar nav li {
+    margin-bottom: 10px;
+}
+
+.sidebar nav a {
+    text-decoration: none;
+    color: #444;
+    display: block;
+    padding: 12px 15px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+.sidebar nav a:hover {
+    background-color: #f0f2f5;
+    color: #007bff;
+}
+
+/* --- Main Content Box Styling --- */
+.box {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    
+    /* Required: Transition for the hover effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Required: Hover Effect */
+.box:hover {
+    /* Scale up the box */
+    transform: scale(1.03); 
+    /* Cast a larger shadow */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1); 
+    z-index: 10; /* Bring to front */
+    position: relative; /* Needed for z-index to work */
+}
+
+.box h3 {
+    margin-top: 0;
+    color: #0056b3;
+}
+
+/* Required: Box spanning 2 columns */
+.box-span-2 {
+    grid-column: span 2;
+    background-color: #e6f7ff; /* Different color to highlight it */
+}
+
+.box-span-2 h3 {
+    color: #004085;
+}

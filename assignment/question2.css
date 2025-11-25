@@ -1,0 +1,90 @@
+/* --- Basic Setup --- */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* --- Product Gallery Grid --- */
+.product-gallery {
+    display: grid;
+    /* Desktop: 4 columns with equal (1fr) width */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px; /* Space between the cards */
+}
+
+/* --- Product Card Styling --- */
+.product-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+    /* This ensures cards in the same row have equal height.
+      We use flex to push the price to the bottom, 
+      making the layout uniform even if names have different lengths.
+    */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    /* Required: Transition for the hover effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Product Image Styling */
+.product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.product-image:hover {
+    transform: scale(1.05);
+}
+
+/* Required: Hover Effect */
+.product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.product-name {
+    font-size: 1.2rem;
+    color: #333;
+    margin: 0 0 10px 0;
+}
+
+.product-price {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #007bff;
+    margin: 0;
+}
+
+/* --- Media Queries for Responsiveness --- */
+
+/* Tablet: Adjust to 2 columns */
+@media (max-width: 992px) {
+    .product-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile: Adjust to 1 column */
+@media (max-width: 600px) {
+    .product-gallery {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

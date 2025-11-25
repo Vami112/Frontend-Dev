@@ -1,0 +1,154 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Loading Container */
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+/* Loading Text */
+.loading-text {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.7;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Circles Container */
+.circles-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* Individual Circles */
+.circle {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    animation: bounce 1.4s ease-in-out infinite;
+}
+
+/* Bouncing Animation */
+@keyframes bounce {
+    0%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+}
+
+/* Staggered Animation Delays */
+.circle-1 {
+    animation-delay: 0s;
+}
+
+.circle-2 {
+    animation-delay: 0.2s;
+}
+
+.circle-3 {
+    animation-delay: 0.4s;
+}
+
+/* Alternative Animation Styles */
+.circle-1 {
+    background-color: #ff6b6b;
+}
+
+.circle-2 {
+    background-color: #4ecdc4;
+}
+
+.circle-3 {
+    background-color: #45b7d1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .loading-text {
+        font-size: 1.2rem;
+    }
+    
+    .circle {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .circles-container {
+        gap: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .loading-text {
+        font-size: 1rem;
+        letter-spacing: 1px;
+    }
+    
+    .circle {
+        width: 16px;
+        height: 16px;
+    }
+    
+    .circles-container {
+        gap: 0.6rem;
+    }
+    
+    .loading-container {
+        gap: 1.5rem;
+    }
+}
+
+/* Additional Animation Variations */
+.circle-1 {
+    animation-timing-function: ease-in-out;
+}
+
+.circle-2 {
+    animation-timing-function: ease-in-out;
+}
+
+.circle-3 {
+    animation-timing-function: ease-in-out;
+}
+
+/* Enhanced bounce effect */
+@keyframes bounce {
+    0%, 80%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    40% {
+        transform: translateY(-30px) scale(1.1);
+    }
+}

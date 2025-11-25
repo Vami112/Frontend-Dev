@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid Dashboard</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="question4.css">
+</head>
+<body>
+
+    <!-- This container is the main CSS Grid for the page layout -->
+    <div class="dashboard-container">
+
+        <!-- Header: Spans the top -->
+        <header class="header">
+            <h1>Dashboard</h1>
+        </header>
+
+        <!-- Sidebar: On the left -->
+        <aside class="sidebar">
+            <nav>
+                <h2>Navigation</h2>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Analytics</a></li>
+                    <li><a href="#">Reports</a></li>
+                    <li><a href="#">Settings</a></li>
+                    <li><a href="#">Profile</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content: This is a grid container *itself* -->
+        <main class="main-content">
+
+            <!-- Box 1: Spans 2 columns -->
+            <div class="box box-span-2">
+                <h3>Main Overview</h3>
+                <p>This box spans two columns as required.</p>
+            </div>
+
+            <!-- Box 2 -->
+            <div class="box">
+                <h3>Metric 1</h3>
+                <p>Some data here.</p>
+            </div>
+
+            <!-- Box 3 -->
+            <div class="box">
+                <h3>Metric 2</h3>
+                <p>Some data here.</p>
+            </div>
+
+            <!-- Box 4 -->
+            <div class="box">
+                <h3>Metric 3</h3>
+                <p>Some data here.</p>
+            </div>
+
+        </main>
+
+    </div> <!-- .dashboard-container -->
+
+</body>
+</html>

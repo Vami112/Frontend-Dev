@@ -1,0 +1,289 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 2rem 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Section Title */
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 1rem;
+    font-weight: 300;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 3rem;
+}
+
+/* Pricing Container */
+.pricing-container {
+    display: flex;
+    gap: 2rem;
+    align-items: stretch;
+    justify-content: center;
+}
+
+/* Pricing Cards */
+.pricing-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    position: relative;
+    flex: 1;
+    max-width: 350px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 0.8s ease forwards;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+/* Fade-in Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Staggered animation delays */
+.basic-card {
+    animation-delay: 0.2s;
+}
+
+.pro-card {
+    animation-delay: 0.4s;
+}
+
+.enterprise-card {
+    animation-delay: 0.6s;
+}
+
+/* Featured Card (Middle) */
+.pro-card.featured {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+    color: white;
+    transform: scale(1.05);
+    z-index: 2;
+}
+
+.pro-card.featured .plan-name,
+.pro-card.featured .price,
+.pro-card.featured .features li {
+    color: white;
+}
+
+/* Popular Badge */
+.popular-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ffd700;
+    color: #333;
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+/* Card Header */
+.card-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.plan-name {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.price {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.2rem;
+}
+
+.currency {
+    font-size: 1.5rem;
+    color: #666;
+}
+
+.amount {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.period {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Card Body */
+.card-body {
+    margin-bottom: 2rem;
+}
+
+.features {
+    list-style: none;
+}
+
+.features li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #eee;
+    font-size: 1rem;
+    color: #555;
+}
+
+.features li:last-child {
+    border-bottom: none;
+}
+
+/* Card Footer */
+.card-footer {
+    text-align: center;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.btn-primary {
+    background: #ff6b6b;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #ff5252;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background: transparent;
+    color: #ff6b6b;
+    border: 2px solid #ff6b6b;
+}
+
+.btn-outline:hover {
+    background: #ff6b6b;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Hover Effects */
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.pro-card.featured:hover {
+    transform: scale(1.05) translateY(-10px);
+}
+
+/* Responsive Design */
+@media (max-width: 750px) {
+    .pricing-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    
+    .pricing-card {
+        max-width: 400px;
+        width: 100%;
+    }
+    
+    .pro-card.featured {
+        transform: none;
+        order: -1;
+    }
+    
+    .pro-card.featured:hover {
+        transform: translateY(-10px);
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .pricing-card {
+        padding: 1.5rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .amount {
+        font-size: 2.5rem;
+    }
+    
+    .btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+/* Additional responsive adjustments */
+@media (max-width: 320px) {
+    .pricing-card {
+        padding: 1rem;
+    }
+    
+    .plan-name {
+        font-size: 1.5rem;
+    }
+    
+    .amount {
+        font-size: 2rem;
+    }
+    
+    .features li {
+        font-size: 0.9rem;
+    }
+}
