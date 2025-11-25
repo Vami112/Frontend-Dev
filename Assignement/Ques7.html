@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Form</title>
+</head>
+<body>
+    <h1>User Login</h1>
+
+    <!-- The hidden CSRF token helps protect against Cross-Site Request Forgery attacks 
+         by verifying that the form submission comes from the legitimate user and not a malicious site. -->
+    <form action="#" method="post">
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <input type="hidden" name="csrf_token" value="abc123xyzTOKEN">
+
+        <input type="submit" value="Login">
+    </form>
+
+</body>
+</html>
