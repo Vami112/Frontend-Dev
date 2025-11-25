@@ -1,0 +1,130 @@
+/* --- Global Styles --- */
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+/* --- Pricing Container (Flexbox Layout) --- */
+.pricing-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /* This is key for equal height */
+    flex-wrap: wrap; /* Allows plans to stack on small screens */
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* --- Individual Pricing Plan --- */
+.pricing-plan {
+    /* Flexbox settings for equal columns */
+    flex: 1; /* Each plan takes equal space */
+    min-width: 280px; /* Minimum width before wrapping */
+    max-width: 350px; /* Maximum width */
+    
+    /* Internal layout for equal height content */
+    display: flex;
+    flex-direction: column; /* Stacks content vertically */
+    
+    /* Styling */
+    background-color: #ffffff;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+
+    /* Transition for hover effect */
+    transition: transform 0.3s ease, 
+                background-color 0.3s ease, 
+                box-shadow 0.3s ease;
+}
+
+/* --- Hover Effect --- */
+.pricing-plan:hover {
+    transform: scale(1.05); /* Slightly enlarge */
+    background-color: #fdfdfd; /* Subtle background change */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Content Styling --- */
+.pricing-plan h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2a2a2a;
+    margin-top: 0;
+}
+
+.price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #007bff;
+    margin: 1rem 0;
+}
+
+.price-suffix {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #777;
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+    /* This pushes the button to the bottom */
+    flex-grow: 1; 
+}
+
+.features-list li {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 0.75rem;
+    border-bottom: 1px dashed #eee;
+    padding-bottom: 0.75rem;
+}
+
+.features-list li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+/* --- Button Styling (Styled Link) --- */
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* --- Popular Plan Highlight --- */
+.pricing-plan.popular {
+    border-color: #007bff; /* Highlight border color */
+    border-width: 3px;
+    position: relative; /* For potential future "Popular" badge */
+}
+
+/* Specific button style for the popular plan */
+.pricing-plan.popular .btn {
+    background-color: #007bff;
+}
+
+.pricing-plan.popular .btn:hover {
+    background-color: #0056b3;
+}

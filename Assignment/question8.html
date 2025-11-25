@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="question8.css">
+</head>
+<body>
+    <!-- Fixed Header -->
+    <header class="dashboard-header">
+        <div class="header-content">
+            <div class="logo">
+                <h1>Dashboard</h1>
+            </div>
+            <div class="header-actions">
+                <div class="user-info">
+                    <span class="user-name">John Doe</span>
+                    <div class="user-avatar">JD</div>
+                </div>
+                <button class="notification-btn">🔔</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <ul class="nav-list">
+                    <li class="nav-item active">
+                        <a href="#dashboard" class="nav-link">
+                            <span class="nav-icon">📊</span>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#analytics" class="nav-link">
+                            <span class="nav-icon">📈</span>
+                            Analytics
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#projects" class="nav-link">
+                            <span class="nav-icon">📁</span>
+                            Projects
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#tasks" class="nav-link">
+                            <span class="nav-icon">✅</span>
+                            Tasks
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#team" class="nav-link">
+                            <span class="nav-icon">👥</span>
+                            Team
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#settings" class="nav-link">
+                            <span class="nav-icon">⚙️</span>
+                            Settings
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <div class="content-header">
+                <h2>Welcome back, John!</h2>
+                <p>Here's what's happening with your projects today.</p>
+            </div>
+
+            <div class="content-grid">
+                <!-- Content Box 1 -->
+                <div class="content-box">
+                    <div class="box-header">
+                        <h3>Project Overview</h3>
+                        <span class="box-icon">📊</span>
+                    </div>
+                    <div class="box-content">
+                        <div class="stat-item">
+                            <div class="stat-number">24</div>
+                            <div class="stat-label">Active Projects</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">156</div>
+                            <div class="stat-label">Tasks Completed</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">89%</div>
+                            <div class="stat-label">Success Rate</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content Box 2 -->
+                <div class="content-box">
+                    <div class="box-header">
+                        <h3>Recent Activity</h3>
+                        <span class="box-icon">📝</span>
+                    </div>
+                    <div class="box-content">
+                        <div class="activity-item">
+                            <div class="activity-icon">✅</div>
+                            <div class="activity-text">
+                                <div class="activity-title">Task Completed</div>
+                                <div class="activity-time">2 hours ago</div>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">📁</div>
+                            <div class="activity-text">
+                                <div class="activity-title">New Project Created</div>
+                                <div class="activity-time">4 hours ago</div>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">👥</div>
+                            <div class="activity-text">
+                                <div class="activity-title">Team Member Added</div>
+                                <div class="activity-time">1 day ago</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content Box 3 -->
+                <div class="content-box">
+                    <div class="box-header">
+                        <h3>Quick Actions</h3>
+                        <span class="box-icon">⚡</span>
+                    </div>
+                    <div class="box-content">
+                        <button class="action-btn primary">Create Project</button>
+                        <button class="action-btn secondary">Add Task</button>
+                        <button class="action-btn secondary">Invite Member</button>
+                    </div>
+                </div>
+
+                <!-- Content Box 4 -->
+                <div class="content-box">
+                    <div class="box-header">
+                        <h3>Team Performance</h3>
+                        <span class="box-icon">📈</span>
+                    </div>
+                    <div class="box-content">
+                        <div class="performance-item">
+                            <div class="performance-bar">
+                                <div class="performance-fill" style="width: 85%"></div>
+                            </div>
+                            <div class="performance-label">Frontend Team</div>
+                        </div>
+                        <div class="performance-item">
+                            <div class="performance-bar">
+                                <div class="performance-fill" style="width: 92%"></div>
+                            </div>
+                            <div class="performance-label">Backend Team</div>
+                        </div>
+                        <div class="performance-item">
+                            <div class="performance-bar">
+                                <div class="performance-fill" style="width: 78%"></div>
+                            </div>
+                            <div class="performance-label">Design Team</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
