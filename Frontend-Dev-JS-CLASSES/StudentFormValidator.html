@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Student Form Validator</title>
+
+  <style>
+    .error { border: 2px solid #e74c3c; }
+    .valid { border: 2px solid #2ecc71; }
+    .msg { font-size: 0.9em; color: #e74c3c; margin-top: 4px; }
+  </style>
+</head>
+<body>
+
+  <h2>Student Registration Form</h2>
+
+  <form id="studentForm" novalidate>
+
+    <!-- NAME -->
+    <div>
+      <label>Name:
+        <input id="name" type="text">
+      </label>
+      <div id="nameMsg" class="msg"></div>
+    </div>
+
+    <!-- EMAIL -->
+    <div>
+      <label>Email:
+        <input id="email" type="text">
+      </label>
+      <div id="emailMsg" class="msg"></div>
+    </div>
+
+    <!-- PHONE -->
+    <div>
+      <label>Phone:
+        <input id="phone" type="text">
+      </label>
+      <div id="phoneMsg" class="msg"></div>
+    </div>
+
+    <!-- PASSWORD -->
+    <div>
+      <label>Password:
+        <input id="password" type="password">
+      </label>
+      <div id="passMsg" class="msg"></div>
+    </div>
+
+    <br>
+    <button type="submit">Submit</button>
+  </form>
+
+<script>
+// ---------- REGEX ----------
+const nameReg   = /^[A-Za-z ]+$/;
+const emailReg  = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[A-Za-z]{2,}$/;
+const phoneReg  = /^[0-9]{10}$/;
+const passReg   = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{6,}$/;
+
+// ---------- VALIDATE FUNCTION ----------
+function validateField(input, regex, msgBox, message){
+  if(regex.test(input.value)){
+    input.className = "valid";
+    msgBox.innerHTML = "";
+    return true;
+  } 
+  else {
+    input.className = "error";
+    msgBox.innerHTML = message;
+    return false;
+  }
+}
+
+// ---------- REAL-TIME EVENT LISTENERS ----------
+document.getElementById("name").addEventListener("input", function(){
+  validateField(this, nameReg, nameMsg, "Name must contain only alphabets");
+});
+
+document.getElementById("email").addEventListener("input", function(){
+  validateField(this, emailReg, emailMsg, "Enter a valid email format");
+});
+
+document.getElementById("phone").addEventListener("input", function(){
+  validateField(this, phoneReg, phoneMsg, "Phone must be exactly 10 digits");
+});
+
+document.getElementById("password").addEventListener("input", function(){
+  validateField(this, passReg, passMsg, "Password must contain 1 uppercase, 1 number & 1 special character");
+});
+
+// ---------- FORM SUBMIT ----------
+document.getElementById("studentForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  let isName = validateField(name, nameReg, nameMsg, "Invalid name");
+  let isEmail = validateField(email, emailReg, emailMsg, "Invalid email");
+  let isPhone = validateField(phone, phoneReg, phoneMsg, "Invalid phone");
+  let isPass = validateField(password, passReg, passMsg, "Invalid password");
+
+  if(isName && isEmail && isPhone && isPass){
+    alert("Form submitted successfully!");
+  } else {
+    alert("Please correct the errors!");
+  }
+});
+
+</script>
+
+</body>
+</html>

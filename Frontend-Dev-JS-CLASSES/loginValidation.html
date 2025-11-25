@@ -1,0 +1,39 @@
+<!-- loginValidation.html -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Login Validation</title></head>
+<body>
+  <form id="loginForm">
+    <div><label>Username: <input id="username" name="username"></label></div>
+    <div><label>Password: <input id="password" name="password" type="password"></label></div>
+    <button type="submit">Login</button>
+  </form>
+  <div id="result"></div>
+
+<script>
+const form = document.getElementById('loginForm');
+const result = document.getElementById('result');
+
+const usernameRe = /^.{5,}$/; // at least 5 characters
+const passwordRe = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\w\s]).{8,}$/; // 8+, lower, upper, number, special
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const user = form.username.value;
+  const pw = form.password.value;
+  let messages = [];
+
+  if (!usernameRe.test(user)) messages.push('Username must be at least 5 characters.');
+  if (!passwordRe.test(pw)) messages.push('Password must be at least 8 chars and include uppercase, lowercase, number, and special char.');
+
+  if (messages.length === 0) {
+    result.style.color = 'green';
+    result.textContent = 'Login validation passed!';
+  } else {
+    result.style.color = 'red';
+    result.innerHTML = messages.join('<br>');
+  }
+});
+</script>
+</body>
+</html>

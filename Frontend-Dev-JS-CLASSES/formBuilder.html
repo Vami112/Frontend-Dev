@@ -1,0 +1,85 @@
+<!-- formBuilder.html -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>FormBuilder</title></head>
+<body>
+  <div id="formContainer"></div>
+  <pre id="output"></pre>
+<script>
+class FormBuilder {
+  // fields: array of {type, name, label, placeholder, options(for select)}
+  constructor(fields) {
+    this.fields = fields;
+    this.form = document.createElement('form');
+    this.form.id = 'dynamicForm';
+    this.build();
+  }
+
+  build() {
+    const frag = document.createDocumentFragment();
+
+    this.fields.forEach(f => {
+      const wrapper = document.createElement('div');
+      const label = document.createElement('label');
+      label.textContent = f.label + ': ';
+      let input;
+
+      if (f.type === 'select') {
+        input = document.createElement('select');
+        (f.options || []).forEach(opt => {
+          const o = document.createElement('option');
+          o.value = opt.value; o.textContent = opt.label;
+          input.appendChild(o);
+        });
+      } else {
+        input = document.createElement('input');
+        input.type = f.type || 'text';
+        if (f.placeholder) input.placeholder = f.placeholder;
+      }
+      input.name = f.name;
+      wrapper.appendChild(label);
+      wrapper.appendChild(input);
+      frag.appendChild(wrapper);
+    });
+
+    const submitBtn = document.createElement('button');
+    submitBtn.type = 'button';
+    submitBtn.textContent = 'Submit';
+    submitBtn.addEventListener('click', () => {
+      document.getElementById('output').textContent = JSON.stringify(this.getFormData(), null, 2);
+    });
+
+    this.form.appendChild(frag);
+    this.form.appendChild(submitBtn);
+  }
+
+  getFormElement() {
+    return this.form;
+  }
+
+  getFormData() {
+    const data = {};
+    const elements = this.form.elements;
+    for (let i = 0; i < elements.length; i++) {
+      const el = elements[i];
+      if (!el.name) continue;
+      data[el.name] = el.value;
+    }
+    return data;
+  }
+}
+
+// usage
+const fields = [
+  { type: 'text', name: 'username', label: 'Username', placeholder: 'Enter username' },
+  { type: 'email', name: 'email', label: 'Email' },
+  { type: 'password', name: 'pwd', label: 'Password' },
+  { type: 'select', name: 'role', label: 'Role', options: [{value: 'user', label: 'User'}, {value:'admin', label:'Admin'}] }
+];
+
+const fb = new FormBuilder(fields);
+document.getElementById('formContainer').appendChild(fb.getFormElement());
+</script>
+</body>
+</html>
+    

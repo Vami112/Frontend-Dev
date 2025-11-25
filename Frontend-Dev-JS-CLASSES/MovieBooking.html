@@ -1,0 +1,38 @@
+<!-- movieBooking.html -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Movie Booking</title></head>
+<body>
+  <form id="bookingForm">
+    <div><label>Name: <input id="name" name="name"></label></div>
+    <div><label>Email: <input id="email" name="email"></label></div>
+    <div><label>Seats: <input id="seats" name="seats" type="number" min="1" max="10"></label></div>
+    <button type="submit">Book</button>
+  </form>
+
+  <div id="ticket"></div>
+
+<script>
+const form = document.getElementById('bookingForm');
+const nameRe = /^[A-Za-z\s]+$/;
+const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const name = form.name.value.trim();
+  const email = form.email.value.trim();
+  const seats = Number(form.seats.value);
+
+  let valid = true;
+  if (!nameRe.test(name)) { alert('Invalid name'); valid = false; }
+  if (!emailRe.test(email)) { alert('Invalid email'); valid = false; }
+  if (!Number.isInteger(seats) || seats < 1 || seats > 10) { alert('Seats must be between 1 and 10'); valid = false; }
+
+  if (!valid) return;
+
+  const booking = { name, email, seats };
+  document.getElementById('ticket').innerText = 'Ticket booked:\n' + JSON.stringify(booking, null, 2);
+});
+</script>
+</body>
+</html>
