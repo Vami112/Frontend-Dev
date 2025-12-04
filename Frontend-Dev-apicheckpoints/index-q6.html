@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Q6 - User Registration</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  <style>
+    body { font-family: Arial; }
+    input { display:block; margin:10px 0; padding:8px; width:250px; }
+    #msg { font-weight:bold; margin-top:10px; }
+    #msg.error { color:red; }
+    #msg.success { color:green; }
+  </style>
+</head>
+<body>
+
+<h2>User Registration (Q6)</h2>
+
+<input type="text" id="name" placeholder="Enter your name">
+<input type="email" id="email" placeholder="Enter email">
+<button onclick="register()">Register</button>
+
+<p id="msg"></p>
+
+<script>
+  const API = "http://localhost:5006/users";
+
+  function register() {
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const msg = document.getElementById("msg");
+
+    msg.innerHTML = "";
+    msg.className = "";
+
+    if (!name || !email) {
+      msg.innerHTML = "All fields are required.";
+      msg.className = "error";
+      return;
+    }
+
+    // 1️⃣ CHECK IF EMAIL EXISTS
+    axios.get(`${API}?email=${email}`)
+      .then(res => {
+        if (res.data.length > 0) {
+          msg.innerHTML = "Email already registered.";
+          msg.className = "error";
+        } else {
+          // 2️⃣ REGISTER NEW USER
+          axios.post(API, { name, email })
+            .then(() => {
+              msg.innerHTML = "User registered successfully!";
+              msg.className = "success";
+
+              document.getElementById("name").value = "";
+              document.getElementById("email").value = "";
+            });
+        }
+      });
+  }
+</script>
+
+</body>
+</html>

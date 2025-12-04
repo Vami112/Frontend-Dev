@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Q3 - Task Manager</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<h2>Task Manager (Q3)</h2>
+
+<select id="filter">
+  <option value="">-- Select Filter --</option>
+  <option value="Low">Low Priority</option>
+  <option value="Medium">Medium Priority</option>
+  <option value="High">High Priority</option>
+  <option value="completed">Completed</option>
+</select>
+
+<ul id="taskList"></ul>
+
+<script>
+  function loadTasks(query = "") {
+    $.get(`http://localhost:5003/tasks${query}`, data => {
+      $("#taskList").html("");
+
+      data.forEach(task => {
+        $("#taskList").append(`
+          <li>
+            <input type="checkbox" ${task.completed ? "checked" : ""} onclick="toggleTask(${task.id}, ${task.completed})">
+            ${task.title} — <b>${task.priority}</b>
+          </li>
+        `);
+      });
+    });
+  }
+
+  $("#filter").change(function () {
+    const val = $(this).val();
+
+    if (val === "completed") loadTasks("?completed=true");
+    else if (val) loadTasks(`?priority=${val}`);
+    else loadTasks();
+  });
+
+  function toggleTask(id, state) {
+    $.ajax({
+      url: `http://localhost:5003/tasks/${id}`,
+      method: "PATCH",
+      data: { completed: !state }
+    });
+  }
+
+  loadTasks();
+</script>
+
+</body>
+</html>

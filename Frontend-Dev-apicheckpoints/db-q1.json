@@ -1,0 +1,9 @@
+{
+  "products": [
+    { "id": 1, "name": "Apple iPhone 14", "price": 79999, "image": "https://via.placeholder.com/100" },
+    { "id": 2, "name": "Samsung Galaxy S23", "price": 74999, "image": "https://via.placeholder.com/100" },
+    { "id": 3, "name": "OnePlus Nord CE 3", "price": 25999, "image": "https://via.placeholder.com/100" },
+    { "id": 4, "name": "Vivo V25", "price": 28999, "image": "https://via.placeholder.com/100" },
+    { "id": 5, "name": "Realme GT Neo 6", "price": 32999, "image": "https://via.placeholder.com/100" }
+  ]
+}

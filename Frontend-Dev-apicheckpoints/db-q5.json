@@ -1,0 +1,7 @@
+{
+  "timetable": [
+    { "id": 1, "day": "Monday", "subject": "DBMS", "faculty": "Dr. Mehta", "time": "10:00 AM" },
+    { "id": 2, "day": "Tuesday", "subject": "AI", "faculty": "Ms. Neha", "time": "9:00 AM" },
+    { "id": 3, "day": "Wednesday", "subject": "CN", "faculty": "Mr. Raj", "time": "11:00 AM" }
+  ]
+}

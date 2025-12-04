@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Q2 - Employee Status Dashboard</title>
+
+  <style>
+    table { border-collapse: collapse; width: 400px; margin-top: 20px; }
+    th, td { border: 1px solid black; padding: 10px; text-align: center; }
+    .active { color: green; font-weight: bold; }
+    .inactive { color: red; font-weight: bold; }
+    #error { color: red; margin-top: 10px; font-weight: bold; }
+  </style>
+</head>
+<body>
+
+<h2>Employee Status Dashboard (Q2)</h2>
+<div id="error"></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Status</th>
+      <th>Toggle</th>
+    </tr>
+  </thead>
+  <tbody id="empBody"></tbody>
+</table>
+
+<script>
+  const API = "http://localhost:5002/employees";
+  const empBody = document.getElementById("empBody");
+  const errorDiv = document.getElementById("error");
+
+  function loadEmployees() {
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", API);
+    xhr.onload = function () {
+      const data = JSON.parse(xhr.responseText);
+      renderEmployees(data);
+    };
+    xhr.send();
+  }
+
+  function renderEmployees(list) {
+    empBody.innerHTML = "";
+    list.forEach(emp => {
+      const row = document.createElement("tr");
+
+      row.innerHTML = `
+        <td>${emp.name}</td>
+        <td class="${emp.status}">${emp.status}</td>
+        <td><button onclick="toggleStatus(${emp.id}, '${emp.status}', this)">Toggle</button></td>
+      `;
+
+      empBody.appendChild(row);
+    });
+  }
+
+  function toggleStatus(id, oldStatus, btn) {
+    errorDiv.innerHTML = "";
+
+    const newStatus = oldStatus === "active" ? "inactive" : "active";
+    const statusCell = btn.parentElement.previousElementSibling;
+
+    // Update UI Immediately
+    statusCell.textContent = newStatus;
+    statusCell.className = newStatus;
+
+    const xhr = new XMLHttpRequest();
+    xhr.open("PATCH", `${API}/${id}`);
+    xhr.setRequestHeader("Content-Type", "application/json");
+
+    xhr.onload = function () {
+      if (xhr.status !== 200) revertUI();
+    };
+
+    xhr.onerror = revertUI;
+
+    xhr.send(JSON.stringify({ status: newStatus }));
+
+    function revertUI() {
+      statusCell.textContent = oldStatus;
+      statusCell.className = oldStatus;
+      errorDiv.innerHTML = "❌ Error updating status! Please try again.";
+    }
+  }
+
+  loadEmployees();
+</script>
+
+</body>
+</html>

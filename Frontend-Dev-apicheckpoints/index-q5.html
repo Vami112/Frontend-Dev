@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Q5 Timetable Viewer</title>
+</head>
+<body>
+
+<h2>Timetable Viewer (Q5)</h2>
+
+<select id="daySelect">
+  <option value="">-- Select Day --</option>
+  <option>Monday</option>
+  <option>Tuesday</option>
+  <option>Wednesday</option>
+  <option>Thursday</option>
+  <option>Friday</option>
+  <option>Saturday</option>
+</select>
+
+<div id="output"></div>
+
+<script>
+  document.getElementById("daySelect").addEventListener("change", function () {
+    const day = this.value;
+
+    if (!day) return;
+
+    fetch(`http://localhost:5005/timetable?day=${day}`)
+      .then(res => res.json())
+      .then(data => {
+        const out = document.getElementById("output");
+        out.innerHTML = "";
+
+        if (data.length === 0) {
+          out.innerHTML = "No classes today.";
+          return;
+        }
+
+        data.forEach(item => {
+          out.innerHTML += `
+            <p>${item.subject} — ${item.faculty} — ${item.time}</p>
+          `;
+        });
+      });
+  });
+</script>
+
+</body>
+</html>

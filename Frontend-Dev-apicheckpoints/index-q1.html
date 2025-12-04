@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Q1 - Live Product Search</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <style>
+    #loading { display:none; color: blue; font-weight:bold; }
+    #results img { width:80px; border-radius:5px; margin-right:10px; }
+    .product {
+      display: flex; 
+      align-items: center; 
+      margin: 10px 0; 
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Real-Time Product Search (Q1)</h2>
+<input type="text" id="searchBox" placeholder="Search products...">
+<p id="loading">Loading...</p>
+<div id="results"></div>
+
+<script>
+  $("#searchBox").on("input", function () {
+    let value = $(this).val();
+
+    $("#loading").show();
+    $("#results").html("");
+
+    $.ajax({
+      url: `http://localhost:5001/products?q=${value}`,
+      method: "GET",
+
+      success: function (data) {
+        $("#loading").hide();
+
+        if (data.length === 0) {
+          $("#results").html("<p>No products found</p>");
+          return;
+        }
+
+        data.forEach(item => {
+          $("#results").append(`
+            <div class="product">
+              <img src="${item.image}" alt="${item.name}">
+              <div>
+                <h3>${item.name}</h3>
+                <p>Price: ₹${item.price}</p>
+              </div>
+            </div>
+          `);
+        });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Q4 Dashboard</title>
+</head>
+<body>
+
+<h2>Dashboard (Q4)</h2>
+
+<p id="users">Loading users...</p>
+<p id="orders">Loading orders...</p>
+<p id="products">Loading products...</p>
+<p id="warning" style="color:red;"></p>
+
+<script>
+  const API = "http://localhost:5004";
+
+  const users = fetch(`${API}/users`).then(r => r.json());
+  const orders = fetch(`${API}/orders`).then(r => r.json());
+  const products = fetch(`${API}/products`).then(r => r.json());
+
+  Promise.all([users, orders, products])
+    .then(([u, o, p]) => {
+      document.getElementById("users").innerText = "Total users: " + u.length;
+      document.getElementById("orders").innerText = "Total orders: " + o.length;
+      document.getElementById("products").innerText = "Total products: " + p.length;
+    })
+    .catch(() => {
+      document.getElementById("warning").innerText = "Some data could not be loaded.";
+    });
+</script>
+
+</body>
+</html>
